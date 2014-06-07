@@ -1,0 +1,2 @@
+hbase version 0.96.2
+hadoop version 2.2
