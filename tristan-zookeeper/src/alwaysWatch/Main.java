@@ -20,7 +20,7 @@ public class Main implements Watcher, StatCallback {
 
 	public Main() throws Exception {
 		zk = new ZooKeeper("192.168.1.107:2181", 30000, this);
-		zk.exists(znode, true, this, null);
+		zk.exists(znode, true);
 		Thread.sleep(Long.MAX_VALUE);
 	}
 	public static void main(String[] args) throws Exception {
