@@ -35,6 +35,8 @@ public class SelfWatcher3 implements Watcher, StatCallback{
         
 		
 		
+		
+		
         zk.getData(znode, true, null);
         zk.setData(znode, "a".getBytes(), -1);
         zk.setData(znode, "b".getBytes(), -1);
