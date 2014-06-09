@@ -33,6 +33,8 @@ public class SelfWatcher3 implements Watcher, StatCallback{
 	public SelfWatcher3() throws Exception {
 		zk=new ZooKeeper("hbaseserver:2181",30000, this); 
         
+		
+		
         zk.getData(znode, true, null);
         zk.setData(znode, "a".getBytes(), -1);
         zk.setData(znode, "b".getBytes(), -1);
