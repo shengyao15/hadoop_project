@@ -10,16 +10,17 @@ import org.apache.zookeeper.ZooKeeper;
 
 public class Main {
 public static void main(String[] args) throws Exception {
-	ZooKeeper zk = new ZooKeeper("192.168.1.107:2181", 30000, new Watcher() { 
+	ZooKeeper zk = new ZooKeeper("hbaseserver:2181", 30000, new Watcher() { 
 	            // 监控所有被触发的事件
 	            public void process(WatchedEvent event) { 
 	                System.out.println("已经触发了" + event.getType() + "事件！"); 
+	                
+	                
 	            } 
 	        }); 
 	
-	Thread.sleep(Long.MAX_VALUE);
 	 
-	 /*// 创建一个目录节点
+	 // 创建一个目录节点
 	 zk.create("/testRootPath", "testRootData".getBytes(), Ids.OPEN_ACL_UNSAFE,
 	   CreateMode.PERSISTENT); 
 	 
@@ -47,6 +48,6 @@ public static void main(String[] args) throws Exception {
 	 zk.delete("/testRootPath",-1); 
 	 // 关闭连接
 	 zk.close(); 
-*/
+
 }
 }
