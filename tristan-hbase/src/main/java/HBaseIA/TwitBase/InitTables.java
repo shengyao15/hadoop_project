@@ -14,17 +14,19 @@ public class InitTables {
 
   public static void main(String[] args) throws Exception {
     Configuration conf = HBaseConfiguration.create();
-   // conf.set("hbase.zookeeper.quorum", "16.165.93.5");
     conf.set("hbase.zookeeper.quorum", "hbaseserver");
+    conf.set("hbase.master", "hbaseserver:60000");
+    conf.set("hbase.zookeeper.property.clientPort", "2181");
     HBaseAdmin admin = new HBaseAdmin(conf);
 
+    
     // first do no harm
     if (args.length > 0 && args[0].equalsIgnoreCase("-f")) {
       System.out.println("!!! dropping tables in...");
-      for (int i = 5; i > 0; i--) {
+     /* for (int i = 5; i > 0; i--) {
         System.out.println(i);
         Thread.sleep(1000);
-      }
+      }*/
 
       if (admin.tableExists(UsersDAO.TABLE_NAME)) {
         System.out.printf("Deleting %s\n", Bytes.toString(UsersDAO.TABLE_NAME));

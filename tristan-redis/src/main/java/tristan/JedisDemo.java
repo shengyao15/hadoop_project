@@ -13,13 +13,13 @@ public class JedisDemo {
 	public static Jedis jedis;
 	
 	static{
-		jedis =  new Jedis("192.168.1.102", 6379);
+		jedis =  new Jedis("192.168.1.105", 6379);
 	}
 	public static void main(String[] args) {
 		
-		//prepareData();
-		//listAll();
-		//searchByCountry("Japan");
+		prepareData();
+		listAll();
+		searchByCountry("Japan");
 		avgByCountry();
 		
 	}

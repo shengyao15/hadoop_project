@@ -29,8 +29,7 @@ public class TestUserCRUD {
 	  
 	public static void main(String[] args) throws Exception {
 		  Configuration conf = HBaseConfiguration.create();
-		    conf.set("hbase.zookeeper.quorum", "16.165.93.5");
-		 // conf.set("hbase.zookeeper.quorum", "hbaseserver");
+		  conf.set("hbase.zookeeper.quorum", "hbaseserver");
 		    HTablePool pool = new HTablePool(conf,10);
 		    
 		    HTableInterface users = pool.getTable("users");

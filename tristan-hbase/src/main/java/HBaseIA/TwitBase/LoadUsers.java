@@ -37,6 +37,8 @@ public class LoadUsers {
     }
 
     HTablePool pool = new HTablePool();
+    
+    
     UsersDAO dao = new UsersDAO(pool);
 
     int count = Integer.parseInt(args[0]);

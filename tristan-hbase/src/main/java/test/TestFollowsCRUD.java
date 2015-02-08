@@ -32,7 +32,7 @@ public class TestFollowsCRUD {
 
 	public static void main(String[] args) throws Exception {
 		Configuration conf = HBaseConfiguration.create();
-		conf.set("hbase.zookeeper.quorum", "16.165.93.5");
+		conf.set("hbase.zookeeper.quorum", "192.168.1.102");
 		HTablePool pool = new HTablePool(conf, 10);
 		
 		//create(pool);
