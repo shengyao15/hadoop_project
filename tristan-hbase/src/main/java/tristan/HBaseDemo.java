@@ -130,7 +130,7 @@ private static void prepareData(HTableInterface students, String name ) throws I
 	
 		Random r = new Random();
 		String[] countrys = { "USA", "China", "Japan" };
-		for (int i = 0; i < 20; i++) {
+		for (int i = 20; i < 40; i++) {
 		Map<String,String> map = new HashMap<String, String>();
 		
 		String country = countrys[r.nextInt(3)];

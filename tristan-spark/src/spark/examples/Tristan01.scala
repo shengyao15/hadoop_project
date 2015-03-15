@@ -15,24 +15,22 @@ object Tristan01 {
   val sc = new SparkContext(conf);
 
   def main(args: Array[String]) {
-    
-    
-   
-val a = sc.parallelize(List(1, 2, 1, 3))
-val b = a.map((_, "b"))
-val c = a.map((_, "c"))
-b.foreach(println)
-b.cogroup(c).collect.foreach(println)
 
- //parallelize()
+    val a = sc.parallelize(List(1, 2, 1, 3))
+    val b = a.map((_, "b"))
+    val c = a.map((_, "c"))
+    b.foreach(println)
+    b.cogroup(c).collect.foreach(println)
 
-//    println(add(3))
-//
-//    println(max(45, 30))
-//
-//    greet()
-//    greets()
-//    pair()
+    //parallelize()
+
+    //    println(add(3))
+    //
+    //    println(max(45, 30))
+    //
+    //    greet()
+    //    greets()
+    //    pair()
   }
 
   private var sum = 100
@@ -62,18 +60,17 @@ b.cogroup(c).collect.foreach(println)
     for (i <- 0 to 3) {
       print(greetStrings(i))
     }
-    
+
     greetStrings.foreach(print)
   }
 
   def pair() = {
-    val pair = (1,"name","address","phone")
+    val pair = (1, "name", "address", "phone")
     println(pair._1)
     println(pair._2)
-    
-    
+
   }
-  
+
   def test1() {
     val rdd = sc.textFile("c:/README.md");
     val rdd2 = rdd.flatMap(_.split(" "));
@@ -84,8 +81,8 @@ b.cogroup(c).collect.foreach(println)
   }
 
   //distinct
-  def parallelize(){
-    val rdd = sc.parallelize(Array("Gnu","Cat","dog","Rat","Rat","Cat","Cat","dog"))
+  def parallelize() {
+    val rdd = sc.parallelize(Array("Gnu", "Cat", "dog", "Rat", "Rat", "Cat", "Cat", "dog"))
     rdd.distinct.foreach(println)
   }
 }
