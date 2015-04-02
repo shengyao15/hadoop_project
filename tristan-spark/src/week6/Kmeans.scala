@@ -41,7 +41,7 @@ object Kmeans {
     //交叉评估1，只返回结果
     val testdata = data.map(s => Vectors.dense(s.split(' ').map(_.toDouble)))
     val result1 = model.predict(testdata)
-    result1.saveAsTextFile("result1")
+    result1.collect().foreach(println)
 
     //交叉评估2，返回数据集和结果
     val result2 = data.map {
@@ -50,7 +50,7 @@ object Kmeans {
         val prediction = model.predict(linevectore)
         line + " " + prediction
     }
-    result2.saveAsTextFile("result2s")
+    result2.collect().foreach(println)
 
     sc.stop()
   }

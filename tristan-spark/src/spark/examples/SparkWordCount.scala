@@ -28,12 +28,14 @@ import org.apache.spark.SparkConf
 object SparkWordCount {
     
    val conf = new SparkConf()
-    conf.setAppName("SparkWordCount")
+//    conf.setAppName("SparkWordCount")
+    conf.setAppName("SparkWordCount").setMaster("local")
     val sc = new SparkContext(conf)
    
   def main(args: Array[String]) {
     
-    val rdd = sc.textFile("/in/README.md")
+//    val rdd = sc.textFile("/in/README.md")
+  		val rdd = sc.textFile("README.md")
 
     println("\n xxxxxxxxxxxxxxx2")
     
